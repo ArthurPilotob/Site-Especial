@@ -23,7 +23,7 @@
             padding: 2rem 4rem;
             background-color: rgb(235, 235, 235); 
             border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            box-shadow: 0 10px 8px rgba(255, 0, 0, 0.1); 
             z-index: 1; 
         }
 
@@ -33,8 +33,8 @@
         
 
         .imagem-central {
-            width: 120px;
-            height: 120px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             margin: 1.5rem 0;
         }
@@ -44,20 +44,31 @@
         }
 
         .imagem-lateral {
-            position: absolute;
+            position: fixed;
             width: 150px;
             height: auto;
             opacity: 0.6;
+            animation: animacao-subir 12s linear infinite;
+        }
+
+        @keyframes animacao-subir {
+
+    from {
+        bottom: -150px;
+    }
+
+
+    to {
+        bottom: 100%;
+    }
         }
 
         #img-esquerda {
-            top: 20%;
             left: 10%;
             transform: rotate(-15deg);
         }
 
         #img-direita {
-            bottom: 15%;
             right: 10%;
             transform: rotate(12deg);
         }
@@ -69,11 +80,12 @@
     <img src="img\img01-removebg-preview.png" alt="Imagem decorativa direita" class="imagem-lateral" id="img-direita">
 
     <div class="container">
-        <h1>Feliz dia dos namorados</h1>
+        <h1>Feliz dia dos namorados!!</h1>
 
-        <img src="img\img01-removebg-preview.png" alt="Descrição da imagem central" class="imagem-central">
-
+        <img src="img\90EE26BE-6936-4FFB-BCD6-55B07F08A940.jpeg" alt="Descrição da imagem central" class="imagem-central">
+        <audio controls src="img\Roberta Campos - Minha Felicidade.mp3"></audio>
         <p>Amor, obrigado por me fazer tão feliz a cada dia eu te amo mais e mais. Juntos pra sempre.</p>
+        <p>Hoje é por isso que agradeço aos céus, estar com você, estar com você</p>
     </div>
 </body>
 </html>
