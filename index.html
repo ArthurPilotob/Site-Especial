@@ -20,7 +20,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 1rem 1rem;
+            padding: 2rem 4rem; /* Padding padrão para desktop */
             background-color: rgb(235, 235, 235); 
             border-radius: 10px; 
             box-shadow: 0 10px 8px rgba(255, 0, 0, 0.1); 
@@ -28,19 +28,21 @@
         }
 
         h1 { 
-            color: #df1616; 
+            color: #df1616;
+            font-size: 2rem; /* Tamanho padrão do título */
         }
         
-
         .imagem-central {
             width: 200px;
             height: 200px;
             object-fit: cover;
             margin: 1.5rem 0;
+            border-radius: 50%; /* SUGESTÃO: Deixar a foto central redonda */
         }
 
         p { 
             color: #df1616; 
+            text-align: center; /* Centraliza os parágrafos */
         }
 
         .imagem-lateral {
@@ -52,15 +54,8 @@
         }
 
         @keyframes animacao-subir {
-
-    from {
-        bottom: -150px;
-    }
-
-
-    to {
-        bottom: 100%;
-    }
+            from { bottom: -150px; }
+            to { bottom: 100%; }
         }
 
         #img-esquerda {
@@ -71,19 +66,45 @@
         #img-direita {
             right: 10%;
             transform: rotate(12deg);
+            animation-delay: -6s; /* SUGESTÃO: Atraso para desincronizar a animação */
         }
 
+        /* --- REGRAS PARA CELULARES E TELAS PEQUENAS --- */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%; /* Garante que o container não encoste nas bordas */
+                padding: 2rem 1.5rem; /* Diminui o espaçamento interno */
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Letra do título menor */
+                text-align: center;
+            }
+            
+            p {
+                font-size: 0.9rem;
+            }
+
+            .imagem-central {
+                width: 120px; /* Imagem central menor no celular */
+                height: 120px;
+            }
+
+            .imagem-lateral {
+                display: none; /* Esconde os corações para uma tela mais limpa */
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="img\img01-removebg-preview.png" alt="Imagem decorativa esquerda" class="imagem-lateral" id="img-esquerda">
-    <img src="img\img01-removebg-preview.png" alt="Imagem decorativa direita" class="imagem-lateral" id="img-direita">
+    <img src="img/img01-removebg-preview.png" alt="Imagem decorativa esquerda" class="imagem-lateral" id="img-esquerda">
+    <img src="img/img01-removebg-preview.png" alt="Imagem decorativa direita" class="imagem-lateral" id="img-direita">
 
     <div class="container">
         <h1>Feliz dia dos namorados!!</h1>
 
-        <img src="img\90EE26BE-6936-4FFB-BCD6-55B07F08A940.jpeg" alt="Descrição da imagem central" class="imagem-central">
-        <audio controls src="img\Roberta Campos - Minha Felicidade.mp3"></audio>
+        <img src="img/90EE26BE-6936-4FFB-BCD6-55B07F08A940.jpeg" alt="Nossa foto" class="imagem-central">
+        <audio controls src="img/Roberta Campos - Minha Felicidade.mp3"></audio>
         <p>Amor, obrigado por me fazer tão feliz a cada dia eu te amo mais e mais. Juntos pra sempre.</p>
         <p>Hoje é por isso que agradeço aos céus, estar com você, estar com você</p>
     </div>
